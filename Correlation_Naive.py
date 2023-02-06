@@ -139,7 +139,7 @@ def sigmoid(num):
 def calc_weights(df,atts,classes):
     weights = []
     m = len(atts)
-    for x in range(m):
+    for x in tqdm(range(m)):
         weight = NI(df,df.keys()[x],atts,x,classes)
         helper = 0
         for y in range(m):
@@ -151,10 +151,10 @@ def calc_weights(df,atts,classes):
     return weights
 
 classes = []
-for x in range(len(df)):
+for x in tqdm(range(len(df))):
     classes.append(df[df.keys()[-1]][x])
 atts = []
-for x in df.keys():
+for x in tqdm(df.keys()):
     if not x == df.keys()[-1]:
         temp = []
         for y in range(len(df)):
