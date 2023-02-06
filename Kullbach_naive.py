@@ -167,7 +167,9 @@ for x in df.keys():
         atts.append(temp)
 classes = set(classes)
 classes = list(classes)
-print(naive(calc_weights(df,atts,classes)))
+weights1 = calc_weights(df, atts, classes)
+print(weights1)
+print(naive(weights1))
 
 
 
